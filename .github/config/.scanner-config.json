@@ -1,0 +1,36 @@
+{
+    "engines": {
+      "eslint": {
+        "enabled": true,
+        "targetPatterns": [
+          "force-app/main/default/lwc/**/*.{js,html,css}",
+          "force-app/main/default/aura/**/*.{js,cmp,app,evt,css}"
+        ],
+        "engineOptions": {
+          "config": ".eslintrc.json"
+        }
+      },
+      "pmd": {
+        "enabled": true,
+        "targetPatterns": [
+          "force-app/main/default/classes/**/*.cls",
+          "force-app/main/default/triggers/**/*.trigger",
+          "force-app/main/default/pages/**/*.page",
+          "force-app/main/default/components/**/*.component"
+        ],
+        "rulesets": [
+          "category/apex/design.xml",
+          "category/apex/bestpractices.xml",
+          "category/apex/performance.xml",
+          "category/apex/security.xml"
+        ],
+        "engineOptions": {
+          "minimumPriority": "3"
+        }
+      }
+    },
+    "severityThreshold": 3,
+    "categories": ["Security", "Bug Risk", "Best Practices"],
+    "outputFormat": "json"
+  }
+  
